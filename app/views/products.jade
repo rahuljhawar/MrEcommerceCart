@@ -1,0 +1,40 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    title Products
+    link(rel='stylesheet', type='text/css', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+  
+  body.container
+    h3.text-center(style='display: inline-block;') Your Products
+    a.btn.btn-success.pull-right(href='http://localhost:3000/users/cart_products',style='margin-top: 18px;') Your Cart
+    a.btn.btn-danger.pull-right(href='http://localhost:3000/users/dashboard',style='margin-top: 18px;') Dashboard
+    a.btn.btn-info.pull-right(href='http://localhost:3000/users/addproduct_page',style='margin-top: 18px;') Add Product
+    hr
+    
+    .table-responsive
+      table.table.table-bordered
+        thead
+          tr
+            th.text-center Product Name
+            th.text-center Price
+            th.text-center View
+            th.text-center Update
+            th.text-center Delete
+        tbody
+          if productCheck
+            each product in products
+             tr
+            
+              th.text-center #{product.productName}
+              th.text-center Rs #{product.productPrice}	
+              th.text-center
+                a.btn-xs.btn.btn-info(href='http://localhost:3000/users/product/view/#{product._id}') View Product
+              th.text-center
+                a.btn-xs.btn.btn-success(href='http://localhost:3000/users/product/edit/#{product._id}') Edit
+              form(method='post', action='http://localhost:3000/users/product/delete/#{product._id}')
+                th.text-center
+                  input.btn-xs.btn.btn-danger(type='submit', name='submit', value='Delete')
+          else
+            h3(style='color:red;') No Products To Show..
+

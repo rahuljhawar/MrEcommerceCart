@@ -1,0 +1,19 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    title Ecommerce
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    style(type='text/css').
+  body
+    .container(style='margin-top: 100px; width: 20%; border: 2px solid black;padding: 15px;')
+      h2.text-center Login
+      form(action='http://localhost:3000/users/login',method='post')
+        .form-group
+          label(for='exampleInputEmail1') Email address
+          input#exampleInputEmail1.form-control(type='email', name='email', placeholder='Email')
+        .form-group
+          label(for='exampleInputPassword1') Password
+          input#exampleInputPassword1.form-control(type='password', name='pwd' ,placeholder='Password')
+        button.btn.btn-default(type='submit') Login
+        a(href='http://localhost:3000/users/forgotpassword_page') Forgot Password?

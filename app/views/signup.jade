@@ -1,0 +1,53 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    title SignUp
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+  body
+    .container.text-center.text-center
+      form.form-horizontal(action='http://localhost:3000/users/signup',method='post')
+        h2.text-center Sign Up
+        .form-group
+          label.col-sm-3.control-label(for='exampleInputEmail1') User Name
+          .col-sm-4
+            input.form-control(type='text', name='username', placeholder='username')
+        .form-group
+          label.col-sm-3.control-label(for='exampleInputPassword1') First Name
+          .col-sm-4
+            input.form-control(type='text', name='firstname', placeholder='firstname')
+        .form-group
+          label.col-sm-3.control-label(for='exampleInputPassword1') Last Name
+          .col-sm-4
+            input.form-control(type='text', name='lastname', placeholder='lastname')
+        .form-group
+          label.col-sm-3.control-label(for='exampleInputPassword1') Email
+          .col-sm-4
+            input.form-control(type='email', name='email', placeholder='email')
+        .form-group
+          label.col-sm-3.control-label(for='exampleInputPassword1') Mobile Number
+          .col-sm-4
+            input.form-control(type='number', name='mnumber', placeholder='mobile number')
+        .form-group
+          label.col-sm-3.control-label(for='exampleInputPassword1') Password
+          .col-sm-4
+            input.form-control(type='password', name='password', placeholder='pssword')
+        .form-group
+          label.col-sm-3.control-label(for='exampleInputPassword1') Security Question
+          .col-sm-4
+            select.form-control(name='squestion')
+              option(value='', selected='', disabled='', hidden='') Choose here
+              option(value='What is your Nick Name?') What is your Nick Name?
+              option(value='What is the name of your favorite teacher?') What is the name of your favorite teacher?
+              option(value='Who is your favourite cricketer?') Who is your favourite cricketer?
+        .form-group
+          label.col-sm-3.control-label(for='exampleInputPassword1') Your Answer
+          .col-sm-4
+            input.form-control(type='text', name='sanswer', placeholder='answer')
+        input.btn.btn-primary(type='submit', name='submit', value='SignUp')
+
+
+
+
+
+

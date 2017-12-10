@@ -1,0 +1,44 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    title View Product
+    link(rel='stylesheet', type='text/css', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    style(type='text/css').
+      label{
+      font-size:20px;
+      color: #fff;
+      }
+      strong{
+      font-size: 16px;
+      }
+      body{
+       background: #0f0c29;  /* fallback for old browsers */
+       background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+       background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+      }
+  body.container
+    h2(style='color: #fff; display: inline-block;') Product Details
+    a.pull-right.btn.btn-primary(href='http://localhost:3000/users/products', style='margin-top: 20px;') Back
+    hr
+    label  Product Name - #{product.productName}
+    strong
+    br
+    label  Product Category - #{product.productCategory}
+    strong
+    br
+    label  Product Description - #{product.productDescription}
+    strong
+    br
+    label  Product Price -  Rs #{product.productPrice}
+    strong
+    br
+    label  Last Updated - #{product.createdOn}
+    strong 
+    br
+    label  Seller Name - #{product.sellerName}
+    strong 
+    br
+    br
+    a.btn.btn-info(href='http://localhost:3000/users/addtocart/#{product._id}') Add To Cart

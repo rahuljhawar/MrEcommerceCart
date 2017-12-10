@@ -1,0 +1,30 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    title Add Product
+    link(rel='stylesheet', type='text/css', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+  body.container
+    h3 Edit Product
+    hr
+    form(method='post', action='http://localhost:3000/users/productedit/#{product._id}')
+      .form-group
+        label(for='productname') Product Name
+        input.form-control(type='text', name='productname', placeholder='product name',value="#{product.productName}" required='')
+      .form-group
+        label Product Category
+        select.form-control(name='productcategory')
+          - category = ['TV, Appliances, Electronics','Home, Kitchen, Pets','Books','Beauty, Health, Grocery','Sports, Fitness, Bags, Luggage']
+          each item in category
+            option(selected="#{product.productCategory}" === item) #{item}
+    
+      .form-group
+        label Product Description
+        input.form-control(type='text', name='productdesc', placeholder='product description',value="#{product.productDescription}", required='')
+      .form-group
+        label Product Price(Rs)
+        input.form-control(type='text', name='productprice', placeholder='product price',value="#{product.productPrice}", required='')
+      .form-group
+        label Seller Name
+        input.form-control(type='text', name='sellername', placeholder='Seller name',value="#{product.sellerName}", required='')
+      input.btn.btn-success(type='submit', name='submit', value='Update Product')

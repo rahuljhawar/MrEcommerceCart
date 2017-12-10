@@ -1,0 +1,32 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    title Add Product
+    link(rel='stylesheet', type='text/css', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+  body.container
+    h3 Add A Product
+    hr
+    form(method='post', action='http://localhost:3000/users/addproduct')
+      .form-group
+        label(for='productname') Product Name
+        input.form-control(type='text', name='productname', placeholder='product name', required='')
+      .form-group
+        label Product Category
+        select.form-control(name='productcategory')
+          option(selected='', disabled='', hidden='') Select Category
+          option(value='TV, Appliances, Electronics') TV, Appliances, Electronics
+          option(value='Home, Kitchen, Pets') Home, Kitchen, Pets
+          option(value='Books') Books
+          option(value='Beauty, Health, Grocery') Beauty, Health, Grocery
+          option(value='Sports, Fitness, Bags, Luggage') Sports, Fitness, Bags, Luggage
+      .form-group
+        label Product Description
+        input.form-control(type='text', name='productdesc', placeholder='product description', required='')
+      .form-group
+        label Product Price(Rs)
+        input.form-control(type='text', name='productprice', placeholder='product price', required='')
+      .form-group
+        label Seller Name
+        input.form-control(type='text', name='sellername', placeholder='Seller name', required='')
+      input.btn.btn-success(type='submit', name='submit', value='Add Product')

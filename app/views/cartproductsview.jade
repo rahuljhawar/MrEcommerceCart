@@ -1,0 +1,35 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    title Cart
+    link(rel='stylesheet', type='text/css', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+  body.container
+    a.btn.btn-success.pull-right(href='http://localhost:3000/users/products',style='margin-top: 18px; display:inline-block;') Products
+    h2 Products In Cart
+
+    hr
+    if(user.cart.length) 
+      each product in user.cart
+        .well
+          form(method='post', action='http://localhost:3000/users/cartproduct/delete/#{product._id}')
+            input.btn.btn-danger.pull-right(type='submit', name='submit', value='Remove From Cart', style='margin-top: 20px;')
+
+          label  Product Name - #{product.productName}
+          strong
+          br
+          label  Product Category - #{product.productCategory}
+          strong
+          br
+          label  Product Description - #{product.productDescription}
+          strong
+          br
+          label  Product Price -  Rs #{product.productPrice}
+          strong
+          br
+          label  Seller Name - #{product.sellerName}
+          strong 
+          br
+    else
+       h3 There are no products in your cart! 
+      
